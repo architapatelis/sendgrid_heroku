@@ -97,6 +97,7 @@ $ heroku addons
 At the very end, add the following to your `config/environments/development.rb`:
 
 ```ruby
+
 config.action_mailer.default_url_options = { host: 'localhost' }
 
 ```
@@ -106,6 +107,7 @@ config.action_mailer.default_url_options = { host: 'localhost' }
 At the very end, add the following to your `config/environments/test.rb`:
 
 ```ruby
+
 config.action_mailer.default_url_options = { host: 'localhost' }
 
 ```
@@ -115,7 +117,9 @@ config.action_mailer.default_url_options = { host: 'localhost' }
 At the very end, add the following to your `config/environments/production.rb`, Replace "morning-stream-10053" with your app's name
 
 ```ruby
+
 config.action_mailer.default_url_options = { host: 'morning-stream-10053.herokuapp.com' }
+
 ```
 
 ### SETUP ENVIRONMENT VARIABLES
@@ -123,26 +127,31 @@ config.action_mailer.default_url_options = { host: 'morning-stream-10053.herokua
 #13
 
 `Figaro` allows you to safely store and access sensitive credentials using variables.
+
 In your `Gemfile` add `gem figaro` and run `$ bundle update`
 
 Generate an `application.yml` file, which will be used to map environment variables to their values:
 
 ```
+
 $ figaro install
 
 ```
 
-* Make sure that `config/application.yml` has been added to your `.gitignore` file,
+Make sure that `config/application.yml` has been added to your `.gitignore` file,
 
 #14
 
-Open `config/application.yml` and add: (Replace the sample values with yours, note that the values are **NOT added as STRINGS**)
+Open `config/application.yml` and add:
+
+Note: Replace the sample values with yours, the **values are NOT added as STRINGS**
 
 ```ruby
 
 SENDGRID_USERNAME: app02268941@heroku.com
 SENDGRID_PASSWORD: 5qapohdfq1012
 SENDGRID_API_KEY: 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
+
 ```
 
 #15
