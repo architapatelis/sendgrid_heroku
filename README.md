@@ -258,7 +258,6 @@ We can test the mailer in the Rails console:
 $ rails console
 2.3.3 :001 > HelloMailer.new_message('architapatelis@gmail.com')
 
-
 ```
 
 If everything is setup correctly, you should receive an email in your inbox within a couple of minutes.
@@ -267,7 +266,7 @@ If everything is setup correctly, you should receive an email in your inbox with
 
 You can use `HelloMailer.new_message()` in a controller or a model:
 
-For example if you want to send a Hello Email when a new user is created:
+For example if you want to send a Hello Email when a _new user_ is created:
 
 
 Call method from Controller:
@@ -286,7 +285,7 @@ end
 
 ```
 
-Call method from Model:
+Or call method from Model:
 
 ```ruby
 class User < ActiveRecord::Base
@@ -307,7 +306,7 @@ $ git push heroku master
 
 ```
 
-This example doesn't use a database, but if you application has a database migrate your production database to Heroku
+_Note: This example doesn't use a database, but if you application has a database then migrate your production database to Heroku_
 
 ```
 $ heroku run rake db:migrate
