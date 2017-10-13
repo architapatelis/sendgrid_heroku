@@ -6,10 +6,14 @@
 
 2. Once, you have a Heroku account, add your credit card info to your account. **Your card will not be charged for free plans** but this validation is needed in order to prevent spammers from abusing the free SendGrid plan.
 
-3. If you already have a Heroku account that you are signed into through your command line utility:
-re-establish your credentials by: `$ heroku auth:logout` and then log back in: `$ heroku login`
+3a. If you already have a Heroku account that you are signed into through your command line utility:
 
-If you are new to Heroku:
+re-establish your credentials by: `$ heroku auth:logout` 
+
+...and then log back in: `$ heroku login`
+
+3b. If you are new to Heroku:
+
 Open your command line utility and login: `$ heroku login`
 
 ### Create a Rails App
