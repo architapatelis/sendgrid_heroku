@@ -14,14 +14,7 @@ Once, you have a Heroku account, add your credit card info to your account. **Yo
 
 If you already have a Heroku account that you are signed into through your command line utility:
 
-re-establish your credentials by:
-
-```sh
-
-$ heroku auth:logout
-
-```
-
+re-establish your credentials by: `$ heroku auth:logout`
 
 ...and then log back in: `$ heroku login`
 
@@ -31,7 +24,9 @@ Open your command line utility and login: `$ heroku login`
 
 ### Create a Rails App
 
-4. The first thing you'll want to do is create a new Rails application by running the `rails new` command.
+#4
+
+The first thing you'll want to do is create a new Rails application by running the `rails new` command.
 
 Lets, call the app, 'hello'
 
@@ -42,7 +37,9 @@ rails new hello
 
 ### Create Heorku Application
 
-5. `cd` into the `hello` directory and run:
+#5
+
+`cd` into the `hello` directory and run:
 
 ```
 $ heroku create
@@ -56,11 +53,15 @@ This creates a randomly generated application name and adds heroku as one of you
 
 ### Replace SQLite with PostgreSQL
 
-6. If you are using SQLite it must be replaced with PostgreSQL because Heroku does not support `sqlite3`. [Follow these directions](https://devcenter.heroku.com/articles/sqlite3).
+#6
+
+If you are using SQLite it must be replaced with PostgreSQL because Heroku does not support `sqlite3`. [Follow these directions](https://devcenter.heroku.com/articles/sqlite3).
 
 ### Test Deployment to Heroku
 
-7. If the setup has been done correctly, you can now try to deploy your application to Heroku
+#7
+
+If the setup has been done correctly, you can now try to deploy your application to Heroku
 
 ```
 git push heroku master
@@ -69,7 +70,9 @@ git push heroku master
 
 ### Install the SendGrid add-on from the command line:
 
-8. Lets add SendGrid to our app:
+#8
+
+Lets add SendGrid to our app:
 
 ```
 $ heroku addons:create sendgrid:starter
@@ -78,7 +81,9 @@ Creating sendgrid:starter on ⬢ morning-stream-10053... free
 Use heroku addons:docs sendgrid to view documentation
 
 ```
-9. Verify that you installed SendGrid by typing the following on the command line:
+#9
+
+Verify that you installed SendGrid by typing the following on the command line:
 
 ```
 $ heroku addons
@@ -87,21 +92,27 @@ $ heroku addons
 
 ### Configure Environment
 
-10. At the very end, add the following to your `config/environments/development.rb`:
+#10
+
+At the very end, add the following to your `config/environments/development.rb`:
 
 ```ruby
 config.action_mailer.default_url_options = { host: 'localhost' }
 
 ```
 
-11. At the very end, add the following to your `config/environments/test.rb`:
+#11
+
+At the very end, add the following to your `config/environments/test.rb`:
 
 ```ruby
 config.action_mailer.default_url_options = { host: 'localhost' }
 
 ```
 
-12. At the very end, add the following to your `config/environments/production.rb`, Replace "morning-stream-10053" with your app's name
+#12
+
+At the very end, add the following to your `config/environments/production.rb`, Replace "morning-stream-10053" with your app's name
 
 ```ruby
 config.action_mailer.default_url_options = { host: 'morning-stream-10053.herokuapp.com' }
@@ -109,7 +120,9 @@ config.action_mailer.default_url_options = { host: 'morning-stream-10053.herokua
 
 ### SETUP ENVIRONMENT VARIABLES
 
-13. `Figaro` allows you to safely store and access sensitive credentials using variables.
+#13
+
+`Figaro` allows you to safely store and access sensitive credentials using variables.
 In your `Gemfile` add `gem figaro` and run `$ bundle update`
 
 Generate an `application.yml` file, which will be used to map environment variables to their values:
@@ -121,7 +134,9 @@ $ figaro install
 
 * Make sure that `config/application.yml` has been added to your `.gitignore` file,
 
-14. Open `config/application.yml` and add: (Replace the sample values with yours, note that the values are **NOT added as STRINGS**)
+#14
+
+Open `config/application.yml` and add: (Replace the sample values with yours, note that the values are **NOT added as STRINGS**)
 
 ```ruby
 
@@ -130,7 +145,9 @@ SENDGRID_PASSWORD: 5qapohdfq1012
 SENDGRID_API_KEY: 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
 ```
 
-15. Retrieve your SendGrid Username and Password and add them to `config/application.yml`:
+#15
+
+Retrieve your SendGrid Username and Password and add them to `config/application.yml`:
 
 ```
 $ heroku config:get SENDGRID_USERNAME
@@ -138,7 +155,9 @@ $ heroku config:get SENDGRID_PASSWORD
 
 ```
 
-16. In your app's dashboard in Heroku, on the upper left side you will see the SendGrid icon, click on the link, go to _Settings_, then _API Keys_ and generate an API key for your app. Add this to `config/application.yml`.
+#16
+
+In your app's dashboard in Heroku, on the upper left side you will see the SendGrid icon, click on the link, go to _Settings_, then _API Keys_ and generate an API key for your app. Add this to `config/application.yml`.
 
 You will also need to add your API Key as a production variable to Heroku:
 
@@ -149,7 +168,9 @@ $ heroku config:add SENDGRID_API_KEY="SG.L5HmBJu1SsGe2zDwP2qR0g.8ZTgATfOf-plAtL7
 
 ### SETUP MAILER
 
-17. Create a file in `config/initializers` named `setup_mail.rb`:
+#17
+
+Create a file in `config/initializers` named `setup_mail.rb`:
 
 ```
 $ touch config/initializers/setup_mail.rb
@@ -175,7 +196,9 @@ end
 ```
 The code in `config/initialize` runs when our app starts. We need to configure some special settings to send emails.
 
-18. Lets, generate a mailer
+#18
+
+Lets, generate a mailer
 
 ```ruby
 
@@ -183,9 +206,13 @@ $ rails generate mailer HelloMailer
 
 ```
 
-19. In your `Gemfile` add `gem sendgrid-ruby` and run `$ bundle update`
+#19
 
-20. In `app/mailers/hello_mailer.rb` add:
+In your `Gemfile` add `gem sendgrid-ruby` and run `$ bundle update`
+
+#20
+
+In `app/mailers/hello_mailer.rb` add:
 
 ```ruby
 require 'sendgrid-ruby'
