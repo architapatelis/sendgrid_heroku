@@ -2,17 +2,20 @@
 
 ### Create a Heroku Account
 
-1. If you haven't already, then go ahead and Sign up for a free [Heroku](https://www.heroku.com/) account, and install the [Heroku toolbelt](https://devcenter.heroku.com/articles/heroku-cli) for your operating system.
+#1
+If you haven't already, then go ahead and Sign up for a free [Heroku](https://www.heroku.com/) account, and install the [Heroku toolbelt](https://devcenter.heroku.com/articles/heroku-cli) for your operating system.
 
-2. Once, you have a Heroku account, add your credit card info to your account. **Your card will not be charged for free plans** but this validation is needed in order to prevent spammers from abusing the free SendGrid plan.
+#2
+Once, you have a Heroku account, add your credit card info to your account. **Your card will not be charged for free plans** but this validation is needed in order to prevent spammers from abusing the free SendGrid plan.
 
-3a. If you already have a Heroku account that you are signed into through your command line utility:
+#3 
+If you already have a Heroku account that you are signed into through your command line utility:
 
-re-establish your credentials by: `$ heroku auth:logout` 
+re-establish your credentials by: `$ heroku auth:logout`
 
 ...and then log back in: `$ heroku login`
 
-3b. If you are new to Heroku:
+If you are new to Heroku:
 
 Open your command line utility and login: `$ heroku login`
 
