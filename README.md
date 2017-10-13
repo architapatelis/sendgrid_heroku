@@ -14,7 +14,14 @@ Once, you have a Heroku account, add your credit card info to your account. **Yo
 
 If you already have a Heroku account that you are signed into through your command line utility:
 
-re-establish your credentials by: `$ heroku auth:logout`
+re-establish your credentials by:
+
+```sh
+
+$ heroku auth:logout
+
+```
+
 
 ...and then log back in: `$ heroku login`
 
