@@ -150,7 +150,7 @@ Note: Replace the sample values with yours, the **values are NOT added as STRING
 
 SENDGRID_USERNAME: app02268941@heroku.com
 SENDGRID_PASSWORD: 5qapohdfq1012
-SENDGRID_API_KEY: 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
+SENDGRID_API_KEY: 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
 
 ```
 
@@ -171,7 +171,7 @@ In your app's dashboard in Heroku, on the upper left side you will see the SendG
 You will also need to add your API Key as a production variable to Heroku:
 
 ```
-$ heroku config:add SENDGRID_API_KEY="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"
+$ heroku config:add SENDGRID_API_KEY="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"
 
 ```
 
@@ -193,7 +193,7 @@ if Rails.env.development? || Rails.env.production?
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     address:        'smtp.sendgrid.net',
-    port:           '2525',
+    port:           '587',
     authentication: :plain,
     user_name:      ENV['SENDGRID_USERNAME'],
     password:       ENV['SENDGRID_PASSWORD'],
@@ -256,12 +256,8 @@ We can test the mailer in the Rails console:
 
 ```
 $ rails console
+2.3.3 :001 > HelloMailer.new_message('architapatelis@gmail.com')
 
-```
-
-```ruby
-
-$ HelloMailer.new_message('someone@gmail.com')
 
 ```
 
