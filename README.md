@@ -283,4 +283,4 @@ end
 $ git push heroku master
 ```
 
-_Note: This example doesn't use a database, but if you application has a database then migrate your production database to Heroku_ - [instructions](https://devcenter.heroku.com/articles/getting-started-with-rails4#migrate-your-database)
+_Note: This example doesn't use a database, but if your application has a database then migrate your production database to Heroku_ - [instructions](https://devcenter.heroku.com/articles/getting-started-with-rails4#migrate-your-database)
